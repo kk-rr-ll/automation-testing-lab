@@ -32,6 +32,7 @@ def test_add_product_to_cart(page: Page):
     element(page, "add-to-cart-sauce-labs-backpack").click()
     expect(element(page, "shopping-cart-badge")).to_have_text("1")
     element(page, "shopping-cart-link").click()
+    expect(page).to_have_url(BASE + "cart.html")
     expect(element(page, "inventory-item-name")).to_have_text("Sauce Labs Backpack")
 
 
