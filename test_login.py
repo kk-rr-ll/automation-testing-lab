@@ -33,7 +33,7 @@ def test_add_product_to_cart(page: Page):
     expect(element(page, "shopping-cart-badge")).to_have_text("1")
     element(page, "shopping-cart-link").click()
     expect(page).to_have_url(BASE + "cart.html")
-    expect(element(page, "inventory-item-name")).to_have_text("Sauce Labs Backpack")
+    expect(element(page, "cart-list").locator('[data-test="inventory-item-name"]')).to_have_text("Sauce Labs Backpack")
 
 
 def test_login_with_invalid_password(page: Page):
