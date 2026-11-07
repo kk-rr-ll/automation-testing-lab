@@ -22,7 +22,7 @@ def test_login_page_is_displayed(page: Page):
 
 def test_successful_login(page: Page):
     login(page)
-    expect(page).to_have_url(BASE + "incorrect.html")
+    expect(page).to_have_url(BASE + "inventory.html")
     expect(element(page, "inventory-container")).to_be_visible()
 
 
